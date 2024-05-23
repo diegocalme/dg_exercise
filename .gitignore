@@ -1,0 +1,4 @@
+# Backend
+be/env/lib
+__pycache__
+.DS_Store
