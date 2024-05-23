@@ -20,6 +20,7 @@ DEBUG = bool(getenv('DJANGO_DEBUG'))
 
 ALLOWED_HOSTS = []
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -29,6 +30,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'api',
+    'models',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -41,7 +45,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'api.urls'
+ROOT_URLCONF = 'dg_exercise.urls'
 
 TEMPLATES = [
     {
@@ -59,7 +63,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'api.wsgi.application'
+WSGI_APPLICATION = 'dg_exercise.wsgi.application'
 
 
 # Database
