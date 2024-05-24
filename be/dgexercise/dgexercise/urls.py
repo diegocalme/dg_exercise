@@ -1,9 +1,10 @@
 from django.contrib import admin
-from django.urls import include, path
-from api.views import PeopleViewSet
+from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
-router = DefaultRouter()
+from api.views import PeopleViewSet
+
+router = DefaultRouter(trailing_slash=False)
 
 router.register(r'people', PeopleViewSet)
 

@@ -1,5 +1,5 @@
-from os import getenv
 from pathlib import Path
+from os import getenv
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -30,9 +30,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'api',
-    'models',
     'rest_framework',
+    'api'
 ]
 
 MIDDLEWARE = [
@@ -45,7 +44,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'dg_exercise.urls'
+ROOT_URLCONF = 'dgexercise.urls'
 
 TEMPLATES = [
     {
@@ -63,7 +62,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'dg_exercise.wsgi.application'
+WSGI_APPLICATION = 'dgexercise.wsgi.application'
 
 
 # Database
@@ -79,7 +78,6 @@ DATABASES = {
         'PORT': str(getenv('DJANGO_DB_PORT'))
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

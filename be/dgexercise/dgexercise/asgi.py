@@ -1,5 +1,5 @@
 """
-ASGI config for dg_exercise project.
+ASGI config for dgexercise project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dg_exercise.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dgexercise.settings')
 
 application = get_asgi_application()
