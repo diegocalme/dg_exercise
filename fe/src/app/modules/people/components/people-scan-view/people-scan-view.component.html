@@ -1,0 +1,19 @@
+<div class="view-container people-scan-view">
+  <h1 class="view-container__title">Scan a person's QR code</h1>
+  <p>Find the information related to a person by scanning their QR code.</p>
+  <div>
+    <button
+      mat-stroked-button
+      type="button"
+      class="people-import-view__scan-button"
+      (click)="onOpenModal()"
+    >
+      Scan!
+    </button>
+  </div>
+  <app-person-qr-scanner
+    *ngIf="isModalVisible$ | async"
+    (close)="onCloseModal()"
+    (personFound)="onPersonFound($event)"
+  ></app-person-qr-scanner>
+</div>

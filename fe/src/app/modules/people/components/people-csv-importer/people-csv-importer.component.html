@@ -1,14 +1,28 @@
-<input
-  type="file"
-  accept="text/csv"
-  [multiple]="false"
-  (change)="onChangeFile($event)"
-/>
-
-<button
-  type="button"
-  (click)="onUploadFile()"
-  [disabled]="!(selectedFile$ | async)"
+<div
+  class="people-csv-importer"
+  *ngIf="{
+    selectedFile: selectedFile$ | async,
+    isSubmitting: isSubmitting$ | async
+  } as vm"
 >
-  Upload!
-</button>
+  <input
+    class="people-csv-importer__file-input"
+    type="file"
+    accept="text/csv"
+    [multiple]="false"
+    [disabled]="vm.isSubmitting"
+    (change)="onChangeFile($event)"
+  />
+  <br />
+  <div class="people-csv-importer__button-container">
+    <button
+      mat-stroked-button
+      type="button"
+      class="people-csv-importer__button"
+      (click)="onUploadFile()"
+      [disabled]="!vm.selectedFile || vm.isSubmitting"
+    >
+      Upload!
+    </button>
+  </div>
+</div>

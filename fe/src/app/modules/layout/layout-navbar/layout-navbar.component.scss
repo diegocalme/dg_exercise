@@ -1,0 +1,22 @@
+.layout-navbar {
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (min-width: 768px) {
+    padding: 1.5em;
+  }
+
+  &__desktop-links {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    &--visible {
+    }
+
+    &--hidden {
+    }
+  }
+}

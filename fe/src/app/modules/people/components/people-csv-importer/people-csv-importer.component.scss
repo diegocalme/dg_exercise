@@ -1,0 +1,9 @@
+.people-csv-importer {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+
+  &__button {
+    width: 10em;
+  }
+}

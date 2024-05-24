@@ -1,1 +1,24 @@
-
+<div class="person-qr-scanner">
+  <div class="person-qr-scanner__navbar">
+    <button
+      mat-flat-button
+      color="primary"
+      type="button"
+      (click)="onCloseModal()"
+    >
+      Close
+    </button>
+  </div>
+  <div class="person-qr-scanner__scanner-container">
+    <div
+      class="person-qr-scanner__scanner"
+      *ngIf="{ isSubmitting: isSubmitting$ | async } as asyncData"
+    >
+      <zxing-scanner
+        *ngIf="!asyncData.isSubmitting"
+        (scanSuccess)="onScan($event)"
+      ></zxing-scanner>
+      <mat-spinner *ngIf="asyncData.isSubmitting"></mat-spinner>
+    </div>
+  </div>
+</div>

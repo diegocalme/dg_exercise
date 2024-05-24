@@ -1,0 +1,9 @@
+.layout {
+  height: calc(100% - 6em);
+  display: flex;
+  flex-direction: column;
+
+  &__container {
+    flex-grow: 1;
+  }
+}
