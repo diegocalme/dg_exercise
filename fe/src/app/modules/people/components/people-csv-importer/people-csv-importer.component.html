@@ -1,0 +1,14 @@
+<input
+  type="file"
+  accept="text/csv"
+  [multiple]="false"
+  (change)="onChangeFile($event)"
+/>
+
+<button
+  type="button"
+  (click)="onUploadFile()"
+  [disabled]="!(selectedFile$ | async)"
+>
+  Upload!
+</button>

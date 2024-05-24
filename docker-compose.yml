@@ -7,7 +7,7 @@ services:
     environment:
       - POSTGRES_USER=dispatchgoods
       - POSTGRES_PASSWORD=dispatchgoods
-      - POSTGRES_DB=dg_exercise
+      - POSTGRES_DB=dgexercise
     restart: unless-stopped
     volumes:
       - db_data:/var/lib/postgresql/data
