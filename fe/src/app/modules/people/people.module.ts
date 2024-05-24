@@ -10,6 +10,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PeopleImportViewComponent } from './components/people-import-view/people-import-view.component';
 import { PeopleScanViewComponent } from './components/people-scan-view/people-scan-view.component';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { MatDialogModule } from '@angular/material/dialog';
+import { PeopleInfoDialogComponent } from './components/people-info-dialog/people-info-dialog.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
     PersonQrScannerComponent,
     PeopleImportViewComponent,
     PeopleScanViewComponent,
+    PeopleInfoDialogComponent,
   ],
   providers: [provideHttpClient(), PeopleService],
   imports: [
@@ -24,8 +27,15 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
     MatInputModule,
     MatButtonModule,
     MatProgressSpinnerModule,
+    MatDialogModule,
     ZXingScannerModule,
   ],
-  exports: [PeopleCsvImporterComponent, PersonQrScannerComponent],
+  exports: [
+    PeopleCsvImporterComponent,
+    PersonQrScannerComponent,
+    PeopleImportViewComponent,
+    PeopleScanViewComponent,
+    PeopleInfoDialogComponent,
+  ],
 })
 export class PeopleModule {}

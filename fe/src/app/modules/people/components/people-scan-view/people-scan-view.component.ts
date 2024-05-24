@@ -1,6 +1,16 @@
 import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { PersonModel } from '../../models/person.model';
+import {
+  MatDialog,
+  MAT_DIALOG_DATA,
+  MatDialogRef,
+  MatDialogTitle,
+  MatDialogContent,
+  MatDialogActions,
+  MatDialogClose,
+} from '@angular/material/dialog';
+import { PeopleInfoDialogComponent } from '../people-info-dialog/people-info-dialog.component';
 
 @Component({
   selector: 'app-people-scan-view',
@@ -16,6 +26,8 @@ export class PeopleScanViewComponent implements OnDestroy {
 
   public readonly isModalVisible$ = this._isModalVisible$.asObservable();
 
+  constructor(private readonly matDialog: MatDialog) {}
+
   public ngOnDestroy(): void {
     this._isModalVisible$.complete();
   }
@@ -23,6 +35,7 @@ export class PeopleScanViewComponent implements OnDestroy {
   public onPersonFound(personModel: PersonModel): void {
     console.log(personModel);
     this.onCloseModal();
+    this.showPersonDetailsDialog(personModel);
   }
 
   public onOpenModal(): void {
@@ -31,5 +44,11 @@ export class PeopleScanViewComponent implements OnDestroy {
 
   public onCloseModal(): void {
     this._isModalVisible$.next(false);
+  }
+
+  private showPersonDetailsDialog(personModel: PersonModel): void {
+    this.matDialog.open(PeopleInfoDialogComponent, {
+      data: { person: personModel },
+    });
   }
 }

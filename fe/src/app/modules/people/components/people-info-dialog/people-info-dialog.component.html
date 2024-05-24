@@ -1,0 +1,11 @@
+<mat-dialog-content>
+  <p>Name: {{ data.person.firstName }} {{ data.person.lastName }}</p>
+  <p>Age: {{ data.person.age }}</p>
+  <p>Address: {{ data.person.address }}</p>
+  <div>
+    <img [src]="data.person.qrcode" [alt]="data.person.id" width="100px" />
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onClose()">Close</button>
+</mat-dialog-actions>
