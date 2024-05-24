@@ -8,7 +8,6 @@ import uuid
 from api.models import People
 from api.serializers import PeopleSerializer
 
-
 # Create your views here.
 class PeopleViewSet(viewsets.ModelViewSet):
   queryset = People.objects.all()
@@ -17,6 +16,8 @@ class PeopleViewSet(viewsets.ModelViewSet):
 
   def create(self, request):
     uploaded_file = request.data.get('csv')
+
+    print(uploaded_file)
 
     if not uploaded_file:
       return Response({'success': False}, status=status.HTTP_400_BAD_REQUEST)
